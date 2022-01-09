@@ -1,23 +1,4 @@
-
-<p align="left"><b><a href="https://github.com/katzer/cordova-plugin-local-notifications/tree/example-x">SAMPLE APP</a> :point_right:</b></p>
-
-<br>
-
-<p align="center">
-    <img src="images/logo.png">
-</p>
-
-<p align="center">
-    <a href="https://www.npmjs.com/package/cordova-plugin-local-notification">
-        <img src="https://badge.fury.io/js/cordova-plugin-local-notification.svg" alt="npm version" />
-    </a>
-    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L3HKQCD9UA35A "Donate once-off to this project using Paypal"">
-        <img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPayl donate button" />
-    </a>
-    <a href="https://opensource.org/licenses/Apache-2.0">
-        <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" />
-    </a>
-</p>
+# Cordova Local Notification Plugin
 
 <br>
 
@@ -46,24 +27,9 @@
 
 - Android 4.4+
 - iOS 10+
-- Windows 10
 
 <br>
 <br>
-
-## Important Notice
-
-Please make sure that you always read the tagged README for the version you're using.
-
-See the _0.8_ branch if you cannot upgrade. Further development for `v0.9-beta` will happen here. The `0.9-dev` and `ios10` branches are obsolate and will be removed soon.
-
-__Known issues__
-
-- Support for Android Oreo is limited yet.
-- v0.9 and v0.8 aren't compatible with each other (Wont fix)
-
-Please report bugs or missing features!
-
 
 ## Basics
 
@@ -137,8 +103,6 @@ cordova.plugins.notification.local.schedule({
     <img width="31%" src="images/android-actions.png">
     &nbsp;&nbsp;&nbsp;&nbsp;
     <img width="31%" src="images/ios-actions.png">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <img width="31%" src="images/windows-actions.png">
 </p>
 
 ### Input
@@ -184,19 +148,19 @@ cordova.plugins.notification.local.schedule({
 
 Actions do have a set of configurable properties. Not all of them are supported across all platforms.
 
-| Property     | Type         | Android | iOS | Windows |
-| :----------- | :----------- | :------ | :-- | :------ |
-| id           | button+input | x       | x   | x       |
-| title        | button+input | x       | x   | x       |
-| launch       | button+input | x       | x   | x       |
-| ui           | button+input |         | x   |         |
-| needsAuth    | button+input |         | x   |         |
-| icon         | button+input | x       |     |         |
-| emptyText    | input        | x       | x   | x       |
-| submitTitle  | input        |         | x   |         |
-| editable     | input        | x       |     |         |
-| choices      | input        | x       |     |         |
-| defaultValue | input        |         |     | x       |
+| Property     | Type         | Android | iOS |
+| :----------- | :----------- | :------ | :-- |
+| id           | button+input | x       | x   |
+| title        | button+input | x       | x   |
+| launch       | button+input | x       | x   |
+| ui           | button+input |         | x   |
+| needsAuth    | button+input |         | x   |
+| icon         | button+input | x       |     |
+| emptyText    | input        | x       | x   |
+| submitTitle  | input        |         | x   |
+| editable     | input        | x       |     |
+| choices      | input        | x       |     |
+| defaultValue | input        |         |     |
 
 
 ## Triggers
@@ -262,45 +226,45 @@ cordova.plugins.notification.local.schedule({
 
 The properties depend on the trigger type. Not all of them are supported across all platforms.
 
-| Type         | Property      | Type    | Value            | Android | iOS | Windows |
-| :----------- | :------------ | :------ | :--------------- | :------ | :-- | :------ |
+| Type         | Property      | Type    | Value            | Android | iOS |
+| :----------- | :------------ | :------ | :--------------- | :------ | :-- |
 | Fix          |
-|              | at            | Date    |                  | x       | x   | x       |
+|              | at            | Date    |                  | x       | x   |
 | Timespan     |
-|              | in            | Int     |                  | x       | x   | x       |
-|              | unit          | String  | `second`         | x       | x   | x       |
-|              | unit          | String  | `minute`         | x       | x   | x       |
-|              | unit          | String  | `hour`           | x       | x   | x       |
-|              | unit          | String  | `day`            | x       | x   | x       |
-|              | unit          | String  | `week`           | x       | x   | x       |
-|              | unit          | String  | `month`          | x       | x   | x       |
-|              | unit          | String  | `quarter`        | x       | x   | x       |
-|              | unit          | String  | `year`           | x       | x   | x       |
+|              | in            | Int     |                  | x       | x   | 
+|              | unit          | String  | `second`         | x       | x   | 
+|              | unit          | String  | `minute`         | x       | x   | 
+|              | unit          | String  | `hour`           | x       | x   | 
+|              | unit          | String  | `day`            | x       | x   | 
+|              | unit          | String  | `week`           | x       | x   | 
+|              | unit          | String  | `month`          | x       | x   | 
+|              | unit          | String  | `quarter`        | x       | x   | 
+|              | unit          | String  | `year`           | x       | x   | 
 | Repeat       |
-|              | count         | Int     |                  | x       |     | x       |
-|              | every         | String  | `minute`         | x       | x   | x       |
-|              | every         | String  | `hour`           | x       | x   | x       |
-|              | every         | String  | `day`            | x       | x   | x       |
-|              | every         | String  | `week`           | x       | x   | x       |
-|              | every         | String  | `month`          | x       | x   | x       |
-|              | every         | String  | `quarter`        | x       |     | x       |
-|              | every         | String  | `year`           | x       | x   | x       |
-|              | before        | Date    |                  | x       |     | x       |
-|              | firstAt       | Date    |                  | x       |     | x       |
+|              | count         | Int     |                  | x       |     | 
+|              | every         | String  | `minute`         | x       | x   | 
+|              | every         | String  | `hour`           | x       | x   | 
+|              | every         | String  | `day`            | x       | x   | 
+|              | every         | String  | `week`           | x       | x   | 
+|              | every         | String  | `month`          | x       | x   | 
+|              | every         | String  | `quarter`        | x       |     | 
+|              | every         | String  | `year`           | x       | x   | 
+|              | before        | Date    |                  | x       |     | 
+|              | firstAt       | Date    |                  | x       |     | 
 | Match        |
-|              | count         | Int     |                  | x       |     | x       |
-|              | every         | Object  | `minute`         | x       | x   | x       |
-|              | every         | Object  | `hour`           | x       | x   | x       |
-|              | every         | Object  | `day`            | x       | x   | x       |
-|              | every         | Object  | `weekday`        | x       | x   | x       |
+|              | count         | Int     |                  | x       |     | 
+|              | every         | Object  | `minute`         | x       | x   | 
+|              | every         | Object  | `hour`           | x       | x   | 
+|              | every         | Object  | `day`            | x       | x   | 
+|              | every         | Object  | `weekday`        | x       | x   | 
 |              | every         | Object  | `weekdayOrdinal` |         | x   |
 |              | every         | Object  | `week`           |         | x   |
-|              | every         | Object  | `weekOfMonth`    | x       | x   | x       |
-|              | every         | Object  | `month`          | x       | x   | x       |
+|              | every         | Object  | `weekOfMonth`    | x       | x   | 
+|              | every         | Object  | `month`          | x       | x   | 
 |              | every         | Object  | `quarter`        |         | x   |
-|              | every         | Object  | `year`           | x       | x   | x       |
-|              | before        | Date    |                  | x       |     | x       |
-|              | after         | Date    |                  | x       |     | x       |
+|              | every         | Object  | `year`           | x       | x   | 
+|              | before        | Date    |                  | x       |     | 
+|              | after         | Date    |                  | x       |     | 
 | Location     |
 |              | center        | Array   | `[lat, long]`    |         | x   |
 |              | radius        | Int     |                  |         | x   |
@@ -501,28 +465,6 @@ See the sample app for how to use them.
 | clearAll | isPresent         | getScheduledIds | getTriggered   | setDefaults   |
 | cancel   | isScheduled       | getTriggeredIds | addActions     | on            |
 
-
-## Installation
-
-The plugin can be installed via [Cordova-CLI][CLI] and is publicly available on [NPM][npm].
-
-Execute from the projects root folder:
-
-    $ cordova plugin add cordova-plugin-local-notification
-
-Or install a specific version:
-
-    $ cordova plugin add cordova-plugin-local-notification@VERSION
-
-Or install the latest head version:
-
-    $ cordova plugin add https://github.com/katzer/cordova-plugin-local-notifications.git
-
-Or install from local source:
-
-    $ cordova plugin add <path> --nofetch --nosave --link
-
-
 ## Contributing
 
 1. Fork it
@@ -530,20 +472,3 @@ Or install from local source:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-
-## License
-
-This software is released under the [Apache 2.0 License][apache2_license].
-
-Made with :yum: from Leipzig
-
-© 2013 [appPlant GmbH][appplant]
-
-
-[ticket_template]: https://github.com/katzer/cordova-plugin-local-notifications/issues/1188
-[cordova]: https://cordova.apache.org
-[CLI]: http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface
-[npm]: https://www.npmjs.com/package/cordova-plugin-local-notification
-[apache2_license]: http://opensource.org/licenses/Apache-2.0
-[appplant]: http://appplant.de
